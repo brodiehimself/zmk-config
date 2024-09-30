@@ -4,9 +4,9 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define BASE 0
-#define NAV  1
-#define SYM  2
-#define ADJ  3
+#define LEF  1
+#define RIG  2
+#define BOT  3
 
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 #define MEH LS(LC(LALT))
@@ -78,7 +78,21 @@
             then-layer = <3>;
         };
     };
-
+	
+    combos {
+        compatible = "zmk,combos";
+        combo_enter {
+            timeout-ms = <50>;
+            key-positions = <17 18 19>;
+            bindings = <&kp ENTER>;
+        };
+		combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ENTER>;
+        };
+    };
+};
     keymap {
         compatible = "zmk,keymap";
 
@@ -87,32 +101,32 @@
             &kp Q           &kp W           &kp F           &kp P           &kp B                                           &kp J           &kp L           &kp U           &kp Y           AS(SEMI)
             &kp A           &lhm LCTRL R    &lhm LALT S     &lhm LGUI T     &kp G                                           &kp M           &rhm LGUI N     &rhm LALT E     &rhm LCTRL I    &kp O
             &kp Z           &kp X           &kp C           &kp D           &kp V                                           &kp K           &kp H           AS(COMMA)       AS(DOT)         AS(FSLH)
-                                                                            &sym_bspc 2 0   &smart_shift    &smart_shift    &lt NAV SPACE
+                                                                            &mo LEF  &kp SPACE    				 &kp LSHIFT &mo RIG
             >;
         };
 
-        nav {
+        RIG {
             bindings = <
-            &trans          &trans          &trans          &trans          &trans                                          &kp PAGE_UP     &kp LC(PG_UP)   &kp UP          &kp LC(PG_DN)   &kp DELETE
-            &trans          &kp LCTRL       &kp LALT        &kp LGUI        &trans                                          &kp PAGE_DOWN   &kp LEFT        &kp DOWN        &kp RIGHT       &kp BSLH
-            &trans          &trans          &trans          &trans          &trans                                          &trans          &kp HOME        &kp END         &kp LC(SPACE)   &kp LC(SPACE)
-                                                                            &mo SYM         &kp LSHFT       &trans          &trans
+            &kp N1          &kp N2          &kp N3          &kp N4          &kp N5                                          &kp N6     		&kp N7		    &kp N8          &kp N9 		    &kp N0
+            &kp DQT  		&kp LBKT   		&kp LBRC   		&kp LPAR   		&trans                                          &trans    		&kp LARW   		&kp DARW   		&kp UARW  		&kp RARW
+            &kp SQT   		&kp RBKT 		&kp RBRC	 	&kp RPAR   		&trans         									&kp BSLH   		&kp UNDER  		&kp PLUS   		&kp PIPE  		&kp QMARK
+                                                                            &mo BOT         &trans   	    &trans          &trans
             >;
         };
 
-        sym {
+        LEF {
             bindings = <
-            AS(N1)          AS(N2)          AS(N3)          AS(N4)          AS(N5)                                          AS(N6)          AS(N7)          AS(N8)          AS(N9)          AS(N0)
-            AS(GRAVE)       &sk LCTRL       &sk LALT        &sk LGUI        &sk LC(LALT)                                    AS(BSLH)        AS(MINUS)       AS(EQUAL)       AS(LBKT)        AS(RBKT)
+            &kp F1          &kp F2          &kp F3          &kp F4          &kp F5                                          &kp F6     		&kp F7		    &kp F8          &kp F9 		    &kp F10
+            AS(GRAVE)       &sk LCTRL       &sk LALT        &sk LGUI        &sk LC(LALT)                                    AS(BSLH)        AS(MINUS)       AS(EQUAL)       &kp F11       	&kp F12
             &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &kp ENTER
-                                                                            &trans          &trans          &kp LSHFT       &mo NAV
+                                                                            &trans          &trans          &kp LSHFT       &trans
             >;
         };
 
-        adj {
+        BOT {
             bindings = <
             &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_CLR_ALL                                  &kp C_SLEEP     &trans          &trans          &kp C_BRI_DN    &kp C_BRI_UP
-            &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &kp C_VOL_DN    &kp C_VOL_UP
+            &trans          &trans          &trans          &kp K          	&trans                                          &trans          &trans          &trans          &kp C_VOL_DN    &kp C_VOL_UP
             &bootloader     &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &bootloader
                                                                             &trans          &trans          &trans          &trans
             >;
