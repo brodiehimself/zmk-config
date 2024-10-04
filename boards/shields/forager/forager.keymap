@@ -87,10 +87,10 @@
             key-positions = <10 11>;
             bindings = <&kp ESCAPE>;
         };
-        combo_bt {
+         combo_bckspc {
             timeout-ms = <300>;
-            key-positions = <31 34>;
-            bindings = <&mo ADJ>;
+            key-positions = <8 9>;
+            bindings = <&kp BACKSPACE>;
         };
     };
 
@@ -110,7 +110,7 @@
             &kp Q           &kp W           &kp F           &kp P           &kp B                                           &kp J           &kp L           &kp U           &kp Y           AS(SEMI)
             &kp A           &lhm LCTRL R    &lhm LALT S     &lhm LGUI T     &kp G                                           &kp M           &rhm LGUI N     &rhm LALT E     &rhm LCTRL I    &kp O
             &kp Z           &kp X           &kp C           &kp D           &kp V                                           &kp K           &kp H           AS(COMMA)       AS(DOT)         AS(FSLH)
-                                                                            &mo NAV &kp SPACE               &smart_shift    &mo SYM
+                                                                            &kp SPACE   &mo NAV                    &mo SYM  &smart_shift
             >;
         };
 
@@ -134,9 +134,9 @@
 
         adj {
             bindings = <
-            &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_CLR_ALL                                  &kp C_SLEEP     &trans          &trans          &kp C_BRI_DN    &kp C_BRI_UP
-            &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &kp C_VOL_DN    &kp C_VOL_UP
-            &bootloader     &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &bootloader
+            &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans    &trans
+            &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans    &trans
+            &bootloader     &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans    &bootloader
                                                                             &trans          &trans          &trans          &trans
             >;
         };
