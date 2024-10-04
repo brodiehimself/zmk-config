@@ -72,11 +72,25 @@
 
     combos {
         compatible = "zmk,combos";
-				// both right thumb keys
         combo_esc {
             timeout-ms = <300>;
             key-positions = <0 1>;
             bindings = <&kp ESCAPE>;
+        };
+        combo_enter {
+            timeout-ms = <300>;
+            key-positions = <15 16 17>;
+            bindings = <&kp ENTER>;
+        };
+        combo_tab {
+            timeout-ms = <300>;
+            key-positions = <10 11>;
+            bindings = <&kp ESCAPE>;
+        };
+        combo_bt {
+            timeout-ms = <300>;
+            key-positions = <31 34>;
+            bindings = <&mo ADJ>;
         };
     };
 
