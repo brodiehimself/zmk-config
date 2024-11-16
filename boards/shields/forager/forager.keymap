@@ -80,7 +80,7 @@
         rig {
             bindings = <
             &kp TAB         &trans          &kp PG_UP       &trans          &kp INS                                     	&trans 		    &kp LCTRL      	&kp DEL       	&kp BSPC        &trans
-            &kp LEFT        &kp DOWN        &kp UP  	    &kp RIGHT       &trans                                        	&kp ENTER       &kp LEFT_GUI    &kp LEFT_ALT    &kp LEFT_CTRL   &kp LEFT_SHIFT 
+            &kp LEFT        &kp DOWN        &kp UP  	    &kp RIGHT       &trans                                        	&kp ENTER       &kp LGUI    	&kp LALT    	kp LCTRL   		&kp LSHIFT 
             &kp ESC         &kp HOME		&kp PG_DN		&kp END			&trans                                    		&trans			&trans			&trans			&trans			&trans
                                                                             &trans	&trans          						&trans 		    &trans
             >;
