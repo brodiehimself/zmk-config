@@ -79,7 +79,7 @@
 
         rig {
             bindings = <
-            &kp TAB         &trans          &kp PG_UP       &trans          &kp INS                                     	&trans 		    &kp LCTRL      	&kp DEL       	&kp BSPC        &BSPC
+            &kp TAB         &trans          &kp PG_UP       &trans          &kp INS                                     	&trans 		    &kp LCTRL      	&kp DEL       	&kp BSPC        &kp BSPC
             &kp LEFT        &kp DOWN        &kp UP  	    &kp RIGHT       &trans                                        	&kp ENTER       &kp LGUI    	&kp LALT    	&kp LCTRL   		&kp LSHIFT 
             &kp ESC         &kp HOME		&kp PG_DN		&kp END			&trans                                    		&trans			&trans			&trans			&trans			&trans
                                                                             &trans	&trans          						&trans 		    &trans
